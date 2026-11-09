@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f2">
+  <title>Spelling Speurtocht · Speel en leer Nederlands</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/game.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Naar de oefening</a>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Spelling Speurtocht, naar het begin">
+        <img src="/icon.svg" width="46" height="46" alt="">
+        <span>Spelling <strong>Speurtocht</strong></span>
+      </a>
+      <nav aria-label="Hulp en instellingen">
+        <button class="text-button" id="help-open"><span class="circle-icon" aria-hidden="true">?</span> Zo werkt het</button>
+        <button class="icon-button" id="settings-open" aria-label="Instellingen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 3-.6 2.2-2 .9-2-.8-2 3.4L5 10.3v2.4l-1.6 1.6 2 3.4 2-.8 2 .9.6 2.2h4l.6-2.2 2-.9 2 .8 2-3.4-1.6-1.6v-2.4l1.6-1.6-2-3.4-2 .8-2-.9L14 3Z"/><circle cx="12" cy="11.5" r="3"/></svg></button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <p id="notice" class="notice" role="status" hidden></p>
+      <section id="home" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="little-star" aria-hidden="true">✦</span> ELKE LETTER EEN STAPJE VERDER</p>
+            <h1 id="home-title">Speel met taal.<br>Leer elke dag.</h1>
+            <p class="intro">Kies de of het, ontdek de juiste werkwoordsvorm<br class="desktop-break"> en verzamel sterren. Gewoon op jouw tempo.</p>
+            <div class="hero-tags"><span>✓ Korte rondes</span><span>✓ Geen tijdsdruk</span><span>✓ Fouten maken mag</span></div>
+          </div>
+          <div class="boat-scene" aria-hidden="true">
+            <span class="scene-star star-one">✦</span><span class="scene-star star-two">✧</span>
+            <span class="letter-bubble bubble-d">d</span><span class="letter-bubble bubble-t">t</span>
+            <svg class="hero-boat" viewBox="0 0 340 250"><ellipse cx="174" cy="220" rx="112" ry="13" fill="#dbded5" opacity=".55"/><path d="M72 161h210l-37 47H113Z" fill="#7865b9"/><path d="M85 176h186" stroke="#ac9bdb" stroke-width="5"/><path d="M169 34v123" stroke="#37434b" stroke-width="5" stroke-linecap="round"/><path d="M160 42 84 148h76Z" fill="#fffdf6" stroke="#e3dfd0" stroke-width="2"/><path d="m180 64 65 84h-65Z" fill="#e0b65f"/><path d="m172 34 37 10-37 10Z" fill="#b0d2bf"/><circle cx="145" cy="187" r="5" fill="#f7f0dc"/><circle cx="176" cy="187" r="5" fill="#f7f0dc"/><circle cx="207" cy="187" r="5" fill="#f7f0dc"/><path d="M44 217q18-11 36 0t36 0 36 0 36 0 36 0 36 0 36 0" fill="none" stroke="#9fbfb3" stroke-width="3" stroke-linecap="round"/></svg>
+            <span class="boat-caption">Alle hens aan <strong>woord!</strong></span>
+          </div>
+        </div>
+
+        <div class="home-grid">
+          <section class="practice-panel panel" aria-labelledby="choose-title">
+            <div class="section-heading"><span class="step-label">01</span><div><h2 id="choose-title">Kies jouw speurtocht</h2><p>Waar wil je vandaag mee oefenen?</p></div></div>
+            <fieldset class="mode-options"><legend class="sr-only">Soort oefening</legend>
+              <label class="mode-card"><input type="radio" name="mode" value="article" checked><span class="mode-symbol article-symbol" aria-hidden="true">de/het</span><span><strong>De of het</strong><small>… boek · … tafel</small><span class="mode-type">Lidwoorden en zelfstandige naamwoorden</span></span><span class="radio-mark" aria-hidden="true"></span></label>
+              <label class="mode-card"><input type="radio" name="mode" value="past-word"><span class="mode-symbol word-symbol" aria-hidden="true">toen</span><span><strong>Verleden tijd</strong><small>Gisteren speelde ik. Of liep ik?</small><span class="mode-type">Regelmatige én sterke werkwoorden</span></span><span class="radio-mark" aria-hidden="true"></span></label>
+              <label class="mode-card"><input type="radio" name="mode" value="participle-word"><span class="mode-symbol word-symbol" aria-hidden="true">gedaan</span><span><strong>Voltooid deelwoord</strong><small>Ik heb gespeeld. Of gelopen?</small><span class="mode-type">Regelmatige én sterke werkwoorden</span></span><span class="radio-mark" aria-hidden="true"></span></label>
+              <label class="mode-card"><input type="radio" name="mode" value="mixed"><span class="mode-symbol shuffle" aria-hidden="true">⇄</span><span><strong>Alles door elkaar</strong><small>Lidwoorden, werkwoorden en uitgangen.</small><span class="mode-type">De verrassingsroute</span></span><span class="radio-mark" aria-hidden="true"></span></label>
+              <label class="mode-card"><input type="radio" name="mode" value="participle"><span class="mode-symbol" aria-hidden="true">d / t</span><span><strong>Alleen d of t</strong><small>Ik heb gewerk…</small><span class="mode-type">Gerichte oefening · regelmatige werkwoorden</span></span><span class="radio-mark" aria-hidden="true"></span></label>
+              <label class="mode-card"><input type="radio" name="mode" value="past"><span class="mode-symbol" aria-hidden="true">de/te</span><span><strong>Alleen de of te</strong><small>Gisteren werk… ik.</small><span class="mode-type">Gerichte oefening · regelmatige werkwoorden</span></span><span class="radio-mark" aria-hidden="true"></span></label>
+            </fieldset>
+            <div class="launch-row"><label class="level-label" for="level">Welke woorden?<select id="level"><option value="all">Alle woorden</option><option value="easy">Rustig beginnen</option><option value="tricky">Extra uitdaging</option></select></label><button class="primary-button" id="start" disabled>Even laden… <span aria-hidden="true">→</span></button></div>
+            <p class="small-note">10 vragen per ronde · ongeveer 3 minuten</p>
+          </section>
+
+          <aside class="journey-panel panel" aria-labelledby="journey-title">
+            <div class="aside-heading"><span class="compass" aria-hidden="true">✧</span><h2 id="journey-title">Jouw ontdekkingen</h2></div>
+            <div class="stats"><div><strong id="total-xp">0</strong><span>punten</span></div><div><strong id="total-rounds">0</strong><span>rondes</span></div><div><strong id="best-streak">0</strong><span>beste reeks</span></div></div>
+            <div class="badge-row" id="badges"><span class="badge" id="badge-first"><span aria-hidden="true">⚑</span><small>Eerste tocht</small></span><span class="badge" id="badge-streak"><span aria-hidden="true">✦</span><small>5 op een rij</small></span><span class="badge" id="badge-expert"><span aria-hidden="true">♜</span><small>50 goed</small></span></div>
+            <p class="journey-note" id="journey-note">Jouw eerste avontuur begint met één woord.</p>
+            <div class="tip-card"><span class="tip-label">EZELSBRUGGETJE</span><h3>Ken je ’t kofschip al?</h3><p>Een klein geheugensteuntje dat je helpt bij een grote twijfel.</p><button class="link-button" id="rule-open">Ontdek het trucje <span aria-hidden="true">↗</span></button></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="play" class="play-section" aria-labelledby="play-title" hidden>
+        <div class="play-top"><button class="text-button" id="leave">← Naar het begin</button><span class="round-label">JOUW WOORDENAVONTUUR</span><span class="round-points" id="round-points">0 punten</span></div>
+        <div class="round-progress"><span id="question-count">Vraag 1 van 10</span><span id="round-streak">Een frisse start!</span></div>
+        <progress id="progress" max="10" value="0" aria-label="Voortgang van deze ronde"></progress>
+        <div class="question-panel panel">
+          <p class="eyebrow" id="question-type">VOLTOOID DEELWOORD</p>
+          <h1 id="play-title" tabindex="-1">Welke uitgang past hier?</h1>
+          <p class="verb-tag"><span id="prompt-label">Hele werkwoord: </span><strong id="verb"></strong></p>
+          <p class="sentence" id="sentence"></p>
+          <div class="answer-options" id="answers" role="group" aria-label="Kies de juiste uitgang"></div>
+          <button class="text-button hint-button" id="hint-toggle" aria-expanded="false" aria-controls="hint">✧ Geef me een hint</button>
+          <p class="hint" id="hint" hidden></p>
+          <div class="feedback" id="feedback" role="status" hidden><h2 id="feedback-title"></h2><p id="feedback-text"></p><p class="word-family" id="word-family"></p><button class="primary-button" id="next">Volgende woord <span aria-hidden="true">→</span></button></div>
+          <p class="keyboard-note" id="keyboard-note">Tip: kies met de toetsen D of T. Ga verder met Enter.</p>
+        </div>
+        <p class="encouragement">Rustig nadenken mag. Je hoeft niet snel te zijn om goed te worden.</p>
+      </section>
+
+      <section id="results" class="results-section" aria-labelledby="results-title" hidden>
+        <div class="results-panel panel"><div class="result-stars" aria-hidden="true">✦ ✦ ✦</div><p class="eyebrow">WEER EEN STAPJE VERDER</p><h1 id="results-title" tabindex="-1">Goed geoefend!</h1><p id="results-message"></p><div class="result-numbers"><div><strong id="result-correct"></strong><span>goed beantwoord</span></div><div><strong id="result-points"></strong><span>punten verdiend</span></div></div><p id="new-badges" class="new-badges" hidden></p><div id="review-list" class="review-list" hidden><h2>Deze woorden oefenen we nog even</h2><ul id="missed-words"></ul></div><div class="results-actions"><button id="retry" class="primary-button" hidden>Oefen deze woorden ↻</button><button id="again" class="primary-button">Nog een speurtocht →</button><button id="home-button" class="text-button">Naar het begin</button></div></div>
+      </section>
+    </main>
+
+    <footer><span><span class="offline-dot" aria-hidden="true"></span> Helemaal offline. Helemaal op jouw tempo.</span><span>Kleine stappen, grote ontdekkingen.</span></footer>
+  </div>
+
+  <dialog id="help-dialog" aria-labelledby="help-title"><button class="dialog-close icon-button" data-close="help-dialog" aria-label="Uitleg sluiten">×</button><p class="eyebrow">WOORDEN OM TE ONTHOUDEN</p><h2 id="help-title">Kies het woord dat past</h2><section class="article-help"><h3>De of het?</h3><p>Leer het lidwoord samen met het zelfstandig naamwoord: <b>de tafel</b>, <b>het boek</b>. Voor veel woorden moet je de combinatie onthouden.</p><p><b>Verkleinwoord in het enkelvoud? Het.</b><br>de tafel → het tafeltje · de hond → het hondje</p><p><b>Meervoud? De.</b> Ook bij verkleinwoorden!<br>het boek → de boeken · het boekje → de boekjes</p></section><section class="strong-help"><h3>Regelmatig of sterk?</h3><p>In <b>Verleden tijd</b> en <b>Voltooid deelwoord</b> staan beide soorten door elkaar. Soms blijft de klank gelijk: <b>spelen → speelde → gespeeld</b>. Soms verandert hij: <b>lopen → liep → gelopen</b>. Kies het hele woord dat in de zin past.</p></section><section class="strong-help"><h3>De klank verandert</h3><p>Bij <strong>sterke werkwoorden</strong> verandert de klank in de verleden tijd. Je kiest het hele woord, niet alleen een d of t.</p><p class="word-family">ik loop → ik liep · oo → ie<br>ik kijk → ik keek · ij → ee<br>ik drink → ik dronk · i → o</p><p>Oefen het rijtje hardop: <b>lopen → liep → gelopen</b>. Soms lijken rijtjes op elkaar: <b>kijken → keek</b> en <b>blijven → bleef</b>. Maar niet elk werkwoord volgt hetzelfde patroon. Je leert deze vormen door te oefenen. Gebruik hier niet ’t kofschip.</p></section><h3>Een d of t: ’t kofschip</h3><p>Dit trucje helpt bij <strong>zwakke werkwoorden</strong>: woorden zoals werken en spelen.</p><ol class="rule-steps"><li><strong>Neem het hele werkwoord en haal -en weg.</strong><span>werken → werk · spelen → spel · leven → lev</span></li><li><strong>Kijk naar de laatste letter of klank.</strong><span>Staat die in <b>t · k · f · s · ch · p · x</b>? Dan kies je <b>-te</b> of <b>-t</b>. Anders kies je <b>-de</b> of <b>-d</b>. De x klinkt als ks en doet ook mee.</span></li><li><strong>Maak het woord netjes af.</strong><span>werken → werkte → gewerkt<br>spelen → speelde → gespeeld</span></li></ol><div class="careful"><strong>Let op de v en de z!</strong><p>Kijk naar <b>leven → lev</b> en <b>reizen → reiz</b>. De v en z staan niet in ’t kofschip. Dus: <b>leefde, geleefd</b> en <b>reisde, gereisd</b>. Kijk niet alleen naar de f in ‘ik leef’ of de s in ‘ik reis’.</p></div><p class="help-footnote">Een stam op d of t? In de verleden tijd kan die dubbel staan: antwoord + de → antwoordde; wacht + te → wachtte. Het voltooid deelwoord krijgt geen extra d of t: geantwoord, gewacht.</p><p class="help-footnote">Dit spel oefent de verleden tijd en het voltooid deelwoord. Voor de tegenwoordige tijd (hij wordt) gebruik je andere regels.</p><button class="primary-button" data-close="help-dialog">Ik snap het, aan de slag →</button></dialog>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title"><button class="dialog-close icon-button" data-close="settings-dialog" aria-label="Instellingen sluiten">×</button><p class="eyebrow">VOOR JOU EN JE OUDER</p><h2 id="settings-title">Op deze computer</h2><p>Je punten, badges en oefenwoorden blijven alleen in deze browser. Er is geen account en er wordt niets verstuurd.</p><p>Gebruik steeds hetzelfde browserprofiel en hetzelfde lokale adres om je voortgang terug te zien. In een privévenster blijft die meestal niet bewaard.</p><div class="careful"><strong>Opnieuw beginnen?</strong><p>Hiermee wis je alle punten, badges en bewaarde oefenwoorden in deze browser. Dit kun je niet terugdraaien.</p><button id="reset" class="danger-button">Wis mijn voortgang</button><div id="reset-confirm" hidden><p>Weet je het zeker?</p><button id="reset-yes" class="danger-button">Ja, alles wissen</button> <button id="reset-no" class="text-button">Bewaren</button></div></div><button class="primary-button" data-close="settings-dialog">Terug naar het avontuur</button></dialog>
+  <noscript><p class="noscript">Zet JavaScript aan in je browser om de oefeningen te spelen. Het spel gebruikt alleen bestanden op deze computer.</p></noscript>
+</body>
+</html>

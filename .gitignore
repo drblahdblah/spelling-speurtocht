@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+
+# Local QA captures and machine-specific working files
+/screenshots/
+.idea/
+.vscode/
+.env
+.env.*
+*.log
